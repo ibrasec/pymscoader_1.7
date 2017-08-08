@@ -103,11 +103,11 @@ offlinecopies
 
 -- 192.168.1.2
 
-  |
+|
+
+|__offlinecopy-192.168.1.2-2016-12-1-12-00-00.log
   
-  |__offlinecopy-192.168.1.2-2016-12-1-12-00-00.log
-  
-  |__offlinecopy-192.168.1.2-2016-12-1-13-00-00.log
+|__offlinecopy-192.168.1.2-2016-12-1-13-00-00.log
 
 You could notice the time of the log at the last of the file name (12-00-00 means 12:00:00).
 If the program couldn't access the devices for reachability issue or for user credential issue, you will not find any file created, instead you will find the ip addresses logged into the failed.log file.
