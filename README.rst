@@ -10,13 +10,13 @@ author name : Ibrahim Abdulghni Khorwat
 
 Files and Directories:
 =====================
-- modules: All required python modules are stored on "modules" folder.
+    - modules: All required python modules are stored on "modules" folder.
 
-- GNS3-TEST: This folder contains a ready network for testing the pymscoader program, you might need to read the "copypast.txt" to simply copy and past it into your local machine to have the related tap0 ready and set.
+    - GNS3-TEST: This folder contains a ready network for testing the pymscoader program, you might need to read the "copypast.txt" to simply copy and past it into your local machine to have the related tap0 ready and set.
 
-- ip_list.txt: This file includes the targetted ip addresses you want the program to log into them.
+    - ip_list.txt: This file includes the targetted ip addresses you want the program to log into them.
 
-- cred_list.txt: This file inculdes the username, password and enable password, this is optional if you want the program to automatically log into devices without asking for user credentails at the very beginning. to activate this option simply type:
+    - cred_list.txt: This file inculdes the username, password and enable password, this is optional if you want the program to automatically log into devices without asking for user credentails at the very beginning. to activate this option simply type:
 
 user@user:~$python pymscoader.py -l cred_list.txt
 
@@ -25,17 +25,17 @@ Note:
 Currently the pymscoader supports Only One login Password for all Devices.
 
 
-- vendor: is a directory that holds the script of the currently supported vendors (cisco,huawei,alcatel,mikrotick and linux)
+    - vendor: is a directory that holds the script of the currently supported vendors (cisco,huawei,alcatel,mikrotick and linux)
 
-- /vendor/cisco: This folder contains the shell scripts for executing show commands or configuration commands, it also contains the commands to be executed either for show or for configuraiton. as example:
+    - /vendor/cisco: This folder contains the shell scripts for executing show commands or configuration commands, it also contains the commands to be executed either for show or for configuraiton. as example:
 
 "cisco.sh" is a linux shell script that loads cisco commands from "commands.txt" file
 
 Once you execute pymscoader; a new files will be created on the same directory, these files are:
 
-- md5_cache.txt: This file stores the md5 hash of the loaded shell script, so that it will warn you if there are any changes done to the loaded shell script.
+    - md5_cache.txt: This file stores the md5 hash of the loaded shell script, so that it will warn you if there are any changes done to the loaded shell script.
 
-- history.log: You could consider this file as a log file that shows the establishment of ssh connection with the targeted devices, every time you execute the program new logs will be appended.
+    - history.log: You could consider this file as a log file that shows the establishment of ssh connection with the targeted devices, every time you execute the program new logs will be appended.
 
 - failed.log: If the program failed to access any targeted devices shell it will be logged into this file, devices are logged here due to one of the following reasons:
 
