@@ -1,0 +1,8 @@
+This is my TODO list for pymscoader:
+ - adding syslog messaging option
+ - adding email messaging option
+ - adding script option where plug-in modules is possible instead of just relying on builtin expect scripts
+ - adding sqlite Database to collect failed,passed and partial results
+ - adding the ability to display passed, failed and partial results
+ - adding the ability to read ip addresses in a form of a json file
+        

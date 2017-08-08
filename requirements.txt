@@ -1,0 +1,10 @@
+# these are the external libraries/modules required for pymscoader to run:
+
+apscheduler 3.3.0: python module.
+netaddr: pyhthon module.
+getopt: python module.
+six: pytohn module.
+sqlite3: python module
+
+expect: linux program.
+sqlite3: linux program

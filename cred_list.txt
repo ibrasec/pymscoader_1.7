@@ -1,0 +1,8 @@
+# Please Don't delete any lines that has "#" included at its beginning.
+# Please Enter your credentials below its associated line.
+# Leave a blank line under enablepassword if no enable password is configured.
+#username
+cisco
+#password
+cisco
+#enablepassword

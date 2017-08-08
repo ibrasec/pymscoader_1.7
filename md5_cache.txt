@@ -1,0 +1,5 @@
+vendor/huawei/huawei.sh d7b06b364c3622d16c9aa5aa5e67f42b
+vendor/cisco/cisco.sh a3443f439386938e3dcd1c7c732444db
+vendor/linux/linux.sh 0d0fde6bbe67528b8cd688bbb6e5f6b5
+vendor/alcatel/alcatel.sh fd6b5867a51cced653f375eeb5748bc4
+vendor/mikrotick/mikrotick.sh fc72a38a668643d771241bdc2e962834
