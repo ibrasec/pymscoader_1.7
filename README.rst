@@ -3,91 +3,70 @@ This program was mainly used to gather the output of multiple show commands from
 
 author name : Ibrahim Abdulghni Khorwat
 
+Files and Directories:
+=====================
+- modules: All required python modules are stored on "modules" folder.
 
-Program file hirarchy:
-=================
-The program directory contains the following files and folders:
-.
-├── pymscoader.py
-├── cisco
-│   ├── cisco_config.sh
-│   ├── cisco_show.sh
-│   ├── config_cmds.txt
-│   └── show_cmds.txt
-├── cred_list.txt
-├── GNS3_Test
-│   ├── AlinkyourPC
-│   │   ├── AlinkyourPC.gns3
-│   │   ├── project-files
-│   │   │   └── dynamips
-│   │   │       ├── configs
-│   │   │       │   ├── i1_private-config.cfg
-│   │   │       │   ├── i1_startup-config.cfg
-│   │   │       │   ├── i2_startup-config.cfg
-│   │   │       │   ├── i3_startup-config.cfg
-│   │   │       │   └── i4_startup-config.cfg
-│   │   │       ├── dynamips_i1_log.txt
-│   │   │       ├── dynamips_i2_log.txt
-│   │   │       ├── dynamips_i3_log.txt
-│   │   │       └── dynamips_i4_log.txt
-│   │   └── screenshot.png
-│   └── easyrunlab.txt
-├── README.txt
-├── ip_list.txt
-└── modules
-    ├── ask
-    │   ├── credentials.py
-    │   ├── __init__.py
-    │   └── script_changed.py
-    ├── __init__.py
-    ├── logger.py
-    └── option.py
-
-- modules: All required python modules are stored on "modules" folder
 - GNS3-TEST: This folder contains raedy network for testing the pymscoader program, you might need to read the "easyrunlab.txt" to simply copy and past it into your local machine to have the related tap0 ready and set.
+
 - ip_list.txt: This file includes the targetted ip addresses you want the program to log into them.
+
 - cred_list.txt: This file inculdes the username, password and enable password, this is optional if you want the program to automatically log into devices without asking for user credentails at the very beginning. to activate this option simply type:
+
 user@user:~$python pymscoader.py -l cred_list.txt
 
 - cisco: This folder contains the shell scripts for executing show commands or configuration commands, it also contains the commands to be executed either for show or for configuraiton. as example:
+
 "cisco_show.sh" is a shell script that loads cisco show commands from "show_cmds.txt" file
+
 "cisco_config.sh" is a shell script that loads cisco configuration commands from "config_cmds.txt" files
 
 Once you execute pymscoader; a new files will be created on the same directory, these files are:
+
 - md5_cache.txt: This file stores the md5 hash of the loaded shell script, so that it will warn you if there are any changes done to the loaded shell script.
 
 - history.log: You could consider this file as a log file that shows the establishment of ssh connection with the targeted devices, every time you execute the program new logs will be appended.
 
 - failed.log: If the program failed to access any targeted devices shell it will be logged into this file, devices are logged here due to one of the following reasons:
+
  * Timeout or the devices is busy.
+ 
  * Device is unreachable.
+ 
  * SSH port is closed.
+ 
  * username or password is incorrect.
+ 
  * enable password is incorrect.
 
-- Depoloyedcopies
 
 Important
 =========
 - capable host machines
+
 This program has been tested only on Linux, and its related distribution.
 
 - Python version
 2.7
 
 - You might need to allow the shell scripts to be executable by doing the below command:
+
 user@user:~$sudo chmod a+x cisco_config.sh
+
 user@user:~$sudo chmod a+x cisco_show.sh
 
 - You need to have expect already installed
+
 user@user:~$sudo apt-get install expect
 
 - You need to Download and install python netaddr module
+
 user@user:~$easy_install netaddreasy_install netaddr
 
 
 How To Use:
 ==========
+
 The default loaded script is "cisco_show.sh" which is a an expect shell script for running multiple show commands found on "show_cmds.txt" on multiple cisco devices specified in the ip_list.txt file. this script can be found under "cisco" directory.
 
 To run the default script "cisco_show.sh" simply type:
@@ -101,16 +80,19 @@ offlinecopies
 -- 10.1.1.1
 | |
 | |__offlinecopy-10.1.1.1-2016-12-1-12-00-00.log
+
 | |__offlinecopy-10.1.1.1-2016-12-1-13-00-00.log
 |
 -- 172.16.5.5
 | |
 | |__offlinecopy-172.16.5.5-2016-12-1-12-00-00.log
+
 | |__offlinecopy-172.16.5.5-2016-12-1-13-00-00.log
 |
 -- 192.168.1.2
   |
   |__offlinecopy-192.168.1.2-2016-12-1-12-00-00.log
+  
   |__offlinecopy-192.168.1.2-2016-12-1-13-00-00.log
 
 You could notice the time of the log at the last of the file name (12-00-00 means 12:00:00).
@@ -118,7 +100,9 @@ If the program couldn't access the devices for reachability issue or for user cr
 if the shell script has been modified for any reason, the next time you run the program you will be asked whether you will need to proceed runnign the program or not, this is just for security reason and that you are really aware of any changes. If you don't want to be questioned every time you do changes to the shell script you could simply type:
 
 user@user:~$python pymscoader -i
+
 or
+
 user@user:~$python pymscoader --ignore
 
 If you want to run multiple configuration commands on multiple cisco devices, you need to load another script which is named as: "cisco_config.sh", you will need to simply type:
@@ -134,42 +118,59 @@ deployedcopies
 -- 10.1.1.1
 | |
 | |__deployedcopy-10.1.1.1-2016-12-1-12-00-00.log
+
 | |__deployedcopy-10.1.1.1-2016-12-2-12-00-00.log
 |
 -- 172.16.5.5
 | |
 | |__deployedcopy-172.16.5.5-2016-12-1-12-00-00.log
+
 | |__deployedcopy-172.16.5.5-2016-12-2-12-00-00.log
 |
 -- 192.168.1.2
   |
   |__deployedcopy-192.168.1.2-2016-12-1-12-00-00.log
+  
   |__deployedcopy-192.168.1.2-2016-12-2-12-00-00.log
 
 
 How To Do Schedualling
 ======================
+
 you have these options
+
 -Y --year
+
 -M --month
+
 -W --week
+
 -D --Day
+
 -H --hour
+
 -M --minute
+
 -S --second
 
 so if you want to run the show commands every 5 hours, you simple type
 
 user@user:~$python pymscoader -H 5
+
 or
+
 user@user:~$python pymscoader --hour 5
 
 
 How To Create another Vendor shell script
 ========================================
+
 You just create another directory - within this program direcoty - with a vendor name.
+
 example:
+
 if the vendor is Huawei create a directory called huawei
+
 if the vendor is Avaya create a directory called avaya
 
 This directory should include the shell script and the commands to be loaded by this scipt.
@@ -210,8 +211,10 @@ or
 Still under Develpoment
 =======================
 Support other host machines other than linux.
+
 Support python 3 version of this program.
+
 Creating other vendor shell scripts.
+
 Sending a Notification by email if the program has been completed its [ schedualled ] process.
 
-( Please Donate, Your support is highly appreciated )
