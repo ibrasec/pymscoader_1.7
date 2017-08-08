@@ -1,5 +1,10 @@
+Description:
+===================
 pymscoder is a python_2.7 program for loading a script and running it into multithreaded processes.
 This program was mainly used to gather the output of multiple show commands from multiple cisco devices or to deploy multiple cisco configuration commands on multiple cisco devices without the need to manually log into each device and type every individual command many times, but this program could also be used to gather or deploy other vendor commands if you have its shell script available.
+
+Althogh similar features Plus more already exists on an open source project called ( Ansible )
+But it is greate to challenge my self to build simlar software program using python.
 
 author name : Ibrahim Abdulghni Khorwat
 
@@ -7,7 +12,7 @@ Files and Directories:
 =====================
 - modules: All required python modules are stored on "modules" folder.
 
-- GNS3-TEST: This folder contains raedy network for testing the pymscoader program, you might need to read the "easyrunlab.txt" to simply copy and past it into your local machine to have the related tap0 ready and set.
+- GNS3-TEST: This folder contains a ready network for testing the pymscoader program, you might need to read the "copypast.txt" to simply copy and past it into your local machine to have the related tap0 ready and set.
 
 - ip_list.txt: This file includes the targetted ip addresses you want the program to log into them.
 
@@ -15,11 +20,16 @@ Files and Directories:
 
 user@user:~$python pymscoader.py -l cred_list.txt
 
-- cisco: This folder contains the shell scripts for executing show commands or configuration commands, it also contains the commands to be executed either for show or for configuraiton. as example:
+Note:
 
-"cisco_show.sh" is a shell script that loads cisco show commands from "show_cmds.txt" file
+Currently the pymscoader supports Only One login Password for all Devices.
 
-"cisco_config.sh" is a shell script that loads cisco configuration commands from "config_cmds.txt" files
+
+- vendor: is a directory that holds the script of the currently supported vendors (cisco,huawei,alcatel,mikrotick and linux)
+
+- /vendor/cisco: This folder contains the shell scripts for executing show commands or configuration commands, it also contains the commands to be executed either for show or for configuraiton. as example:
+
+"cisco.sh" is a linux shell script that loads cisco commands from "commands.txt" file
 
 Once you execute pymscoader; a new files will be created on the same directory, these files are:
 
