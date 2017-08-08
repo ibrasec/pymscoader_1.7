@@ -6,8 +6,6 @@ This program was mainly used to gather the output of multiple show commands from
 Althogh similar features Plus more already exists on an open source project called ( Ansible )
 But it is greate to challenge my self to build simlar software program using python.
 
-author name : Ibrahim Abdulghni Khorwat
-
 Files and Directories:
 =====================
     - modules: All required python modules are stored on "modules" folder.
@@ -18,7 +16,7 @@ Files and Directories:
 
     - cred_list.txt: This file inculdes the username, password and enable password, this is optional if you want the program to automatically log into devices without asking for user credentails at the very beginning. to activate this option simply type:
 
-user@user:~$python pymscoader.py -l cred_list.txt
+    user@user:~$python pymscoader.py -l cred_list.txt
 
 Note:
 
@@ -37,7 +35,7 @@ Once you execute pymscoader; a new files will be created on the same directory, 
 
     - history.log: You could consider this file as a log file that shows the establishment of ssh connection with the targeted devices, every time you execute the program new logs will be appended.
 
-- failed.log: If the program failed to access any targeted devices shell it will be logged into this file, devices are logged here due to one of the following reasons:
+    - failed.log: If the program failed to access any targeted devices shell it will be logged into this file, devices are logged here due to one of the following reasons:
 
  * Timeout or the devices is busy.
  
@@ -61,17 +59,11 @@ This program has been tested only on Linux, and its related distribution.
 
 - You might need to allow the shell scripts to be executable by doing the below command:
 
-user@user:~$sudo chmod a+x cisco_config.sh
-
-user@user:~$sudo chmod a+x cisco_show.sh
+user@user:~$sudo chmod a+x cisco.sh
 
 - You need to have expect already installed
 
 user@user:~$sudo apt-get install expect
-
-- You need to Download and install python netaddr module
-
-user@user:~$easy_install netaddreasy_install netaddr
 
 
 How To Use:
@@ -90,7 +82,6 @@ offlinecopies
 -- 10.1.1.1
 | |
 | |__offlinecopy-10.1.1.1-2016-12-1-12-00-00.log
-
 | |__offlinecopy-10.1.1.1-2016-12-1-13-00-00.log
 |
 -- 172.16.5.5
@@ -114,35 +105,6 @@ user@user:~$python pymscoader -i
 or
 
 user@user:~$python pymscoader --ignore
-
-If you want to run multiple configuration commands on multiple cisco devices, you need to load another script which is named as: "cisco_config.sh", you will need to simply type:
-
-user@user:~$python pymscoader -s cisco_config.sh
-or
-user@user:~$python pymscoader --script cisco_config.sh
-
-The result will be stored on a directory called "deployedcopies",if you go into this directory you will find as much files as the number of successfully logged-in devices, here is a tree view of what you would see if the program managed to access these ip addresses (10.1.1.1, 192.168.1.2, 172.16.5.5)
-
-deployedcopies
-|
--- 10.1.1.1
-| |
-| |__deployedcopy-10.1.1.1-2016-12-1-12-00-00.log
-
-| |__deployedcopy-10.1.1.1-2016-12-2-12-00-00.log
-|
--- 172.16.5.5
-| |
-| |__deployedcopy-172.16.5.5-2016-12-1-12-00-00.log
-
-| |__deployedcopy-172.16.5.5-2016-12-2-12-00-00.log
-|
--- 192.168.1.2
-  |
-  |__deployedcopy-192.168.1.2-2016-12-1-12-00-00.log
-  
-  |__deployedcopy-192.168.1.2-2016-12-2-12-00-00.log
-
 
 How To Do Schedualling
 ======================
