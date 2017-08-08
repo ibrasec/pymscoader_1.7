@@ -1,0 +1,41 @@
+Feb 20 19:57:57.927 HYPERVISOR: Release 0.2.15-amd64/Linux (tag 2015060118)
+Feb 20 19:57:57.927 HYPERVISOR: Started on IP = 127.0.0.1, TCP port = 41260.
+Feb 20 19:57:57.991 HYPERVISOR: exec_cmd: hypervisor version 
+Feb 20 19:57:58.000 HYPERVISOR: exec_cmd: hypervisor working_dir /opt/GNS3/Project/AlinkyourPC/project-files/dynamips 
+Feb 20 19:57:58.000 GENERAL: working_dir=/opt/GNS3/Project/AlinkyourPC/project-files/dynamips
+Feb 20 19:57:58.003 HYPERVISOR: exec_cmd: vm create R5 3 c3600 
+Feb 20 19:57:58.003 VM: VM R5 created.
+Feb 20 19:57:58.004 HYPERVISOR: exec_cmd: vm set_con_tcp_port R5 2002 
+Feb 20 19:57:58.006 HYPERVISOR: exec_cmd: c3600 get_mac_addr R5 
+Feb 20 19:57:58.007 HYPERVISOR: exec_cmd: vm get_status R5 
+Feb 20 19:57:58.008 HYPERVISOR: exec_cmd: vm set_idle_pc R5 0x605050e4 
+Feb 20 19:57:58.009 HYPERVISOR: exec_cmd: vm set_ram R5 192 
+Feb 20 19:57:58.011 HYPERVISOR: exec_cmd: vm set_ios R5 /root/GNS3/images/IOS/c3640-jk9o3s-mz.124-16a.image 
+Feb 20 19:57:58.012 HYPERVISOR: exec_cmd: c3600 set_mac_addr R5 cc03.0c6f.0000 
+Feb 20 19:57:58.014 HYPERVISOR: exec_cmd: vm get_status R5 
+Feb 20 19:57:58.016 HYPERVISOR: exec_cmd: vm slot_add_binding R5 2 0 NM-1FE-TX 
+Feb 20 19:57:58.018 HYPERVISOR: exec_cmd: vm set_nvram R5 256 
+Feb 20 19:57:58.021 HYPERVISOR: exec_cmd: vm get_status R5 
+Feb 20 19:57:58.026 HYPERVISOR: exec_cmd: vm slot_add_binding R5 0 0 NM-1FE-TX 
+Feb 20 19:57:58.031 HYPERVISOR: exec_cmd: vm get_status R5 
+Feb 20 19:57:58.033 HYPERVISOR: exec_cmd: vm slot_add_binding R5 1 0 NM-1FE-TX 
+Feb 20 19:57:58.035 HYPERVISOR: exec_cmd: vm set_config R5 configs/i3_startup-config.cfg 
+Feb 20 19:57:58.176 HYPERVISOR: exec_cmd: nio create_udp udp-22abf2c2-c8be-4e04-9cc9-64a3fc24a45b 10004 127.0.0.1 10005 
+Feb 20 19:57:58.192 HYPERVISOR: exec_cmd: vm slot_add_nio_binding R5 2 0 udp-22abf2c2-c8be-4e04-9cc9-64a3fc24a45b 
+Feb 20 19:57:58.201 HYPERVISOR: exec_cmd: vm get_status R5 
+Feb 20 19:58:13.277 HYPERVISOR: exec_cmd: vm extract_config R5 
+Feb 20 19:58:17.609 HYPERVISOR: exec_cmd: vm set_ghost_status R5 2 
+Feb 20 19:58:17.612 HYPERVISOR: exec_cmd: vm set_ghost_file R5 c3640-jk9o3s-mz.124-16a.image-192.ghost 
+Feb 20 19:58:17.613 HYPERVISOR: exec_cmd: vm get_status R5 
+Feb 20 19:58:17.614 HYPERVISOR: exec_cmd: vm start R5 
+Feb 20 23:11:30.870 HYPERVISOR: exec_cmd: vm get_status R5 
+Feb 20 23:11:30.872 HYPERVISOR: exec_cmd: vm stop R5 
+Feb 20 23:11:30.948 VM: VM R5 shutdown.
+Feb 20 23:11:30.962 HYPERVISOR: exec_cmd: vm extract_config R5 
+Feb 20 23:11:31.585 HYPERVISOR: exec_cmd: vm get_status R5 
+Feb 20 23:11:31.587 HYPERVISOR: exec_cmd: vm extract_config R5 
+Feb 20 23:11:31.590 HYPERVISOR: exec_cmd: vm delete R5 
+Feb 20 23:11:31.590 VM: VM R5 destroyed.
+Feb 20 23:11:31.594 HYPERVISOR: exec_cmd: hypervisor stop 
+Feb 20 23:11:31.611 HYPERVISOR: Stopped.
+Feb 20 23:11:31.611 GENERAL: reset done.

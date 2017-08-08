@@ -1,0 +1,41 @@
+Feb 20 19:57:58.040 HYPERVISOR: Release 0.2.15-amd64/Linux (tag 2015060118)
+Feb 20 19:57:58.040 HYPERVISOR: Started on IP = 127.0.0.1, TCP port = 47393.
+Feb 20 19:57:58.097 HYPERVISOR: exec_cmd: hypervisor version 
+Feb 20 19:57:58.104 HYPERVISOR: exec_cmd: hypervisor working_dir /opt/GNS3/Project/AlinkyourPC/project-files/dynamips 
+Feb 20 19:57:58.104 GENERAL: working_dir=/opt/GNS3/Project/AlinkyourPC/project-files/dynamips
+Feb 20 19:57:58.105 HYPERVISOR: exec_cmd: vm create A 5 c3600 
+Feb 20 19:57:58.105 VM: VM A created.
+Feb 20 19:57:58.106 HYPERVISOR: exec_cmd: vm set_con_tcp_port A 2004 
+Feb 20 19:57:58.106 HYPERVISOR: exec_cmd: c3600 get_mac_addr A 
+Feb 20 19:57:58.107 HYPERVISOR: exec_cmd: vm get_status A 
+Feb 20 19:57:58.107 HYPERVISOR: exec_cmd: vm set_idle_pc A 0x605050e4 
+Feb 20 19:57:58.108 HYPERVISOR: exec_cmd: vm set_ram A 192 
+Feb 20 19:57:58.108 HYPERVISOR: exec_cmd: vm set_ios A /root/GNS3/images/IOS/c3640-jk9o3s-mz.124-16a.image 
+Feb 20 19:57:58.109 HYPERVISOR: exec_cmd: c3600 set_mac_addr A cc05.1072.0000 
+Feb 20 19:57:58.110 HYPERVISOR: exec_cmd: vm get_status A 
+Feb 20 19:57:58.110 HYPERVISOR: exec_cmd: vm slot_add_binding A 2 0 NM-1FE-TX 
+Feb 20 19:57:58.111 HYPERVISOR: exec_cmd: vm set_nvram A 256 
+Feb 20 19:57:58.115 HYPERVISOR: exec_cmd: vm get_status A 
+Feb 20 19:57:58.120 HYPERVISOR: exec_cmd: vm slot_add_binding A 0 0 NM-1FE-TX 
+Feb 20 19:57:58.121 HYPERVISOR: exec_cmd: vm get_status A 
+Feb 20 19:57:58.122 HYPERVISOR: exec_cmd: vm slot_add_binding A 1 0 NM-1FE-TX 
+Feb 20 19:57:58.123 HYPERVISOR: exec_cmd: vm set_config A configs/i5_startup-config.cfg 
+Feb 20 19:57:58.234 HYPERVISOR: exec_cmd: nio create_udp udp-37630d48-0448-408e-b73e-6e6ffa7809a9 10009 127.0.0.1 10008 
+Feb 20 19:57:58.235 HYPERVISOR: exec_cmd: vm slot_add_nio_binding A 2 0 udp-37630d48-0448-408e-b73e-6e6ffa7809a9 
+Feb 20 19:57:58.236 HYPERVISOR: exec_cmd: vm get_status A 
+Feb 20 19:58:13.220 HYPERVISOR: exec_cmd: vm extract_config A 
+Feb 20 19:58:17.599 HYPERVISOR: exec_cmd: vm set_ghost_status A 2 
+Feb 20 19:58:17.604 HYPERVISOR: exec_cmd: vm set_ghost_file A c3640-jk9o3s-mz.124-16a.image-192.ghost 
+Feb 20 19:58:17.605 HYPERVISOR: exec_cmd: vm get_status A 
+Feb 20 19:58:17.608 HYPERVISOR: exec_cmd: vm start A 
+Feb 20 23:11:30.866 HYPERVISOR: exec_cmd: vm get_status A 
+Feb 20 23:11:30.870 HYPERVISOR: exec_cmd: vm stop A 
+Feb 20 23:11:30.953 VM: VM A shutdown.
+Feb 20 23:11:30.965 HYPERVISOR: exec_cmd: vm extract_config A 
+Feb 20 23:11:31.585 HYPERVISOR: exec_cmd: vm get_status A 
+Feb 20 23:11:31.588 HYPERVISOR: exec_cmd: vm extract_config A 
+Feb 20 23:11:31.591 HYPERVISOR: exec_cmd: vm delete A 
+Feb 20 23:11:31.591 VM: VM A destroyed.
+Feb 20 23:11:31.594 HYPERVISOR: exec_cmd: hypervisor stop 
+Feb 20 23:11:31.710 HYPERVISOR: Stopped.
+Feb 20 23:11:31.710 GENERAL: reset done.

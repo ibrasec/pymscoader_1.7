@@ -1,0 +1,50 @@
+# copy the below on your linux shell to create a virtual interface (tap0)
+# and to connect it with the GNS3.
+
+sudo tunctl
+sudo ifconfig tap0 0.0.0.0 promisc
+sudo ifconfig tap0 0.0.0.0 promisc up
+sudo ifconfig tap0 10.1.1.100 netmask 255.255.255.0
+ifconfig tap0 inet6 add 2001:db8:1:1::100/64::1
+sudo route add 10.4.4.4 gw 10.1.1.1
+sudo route add 10.5.5.5 gw 10.1.1.1
+sudo route add 10.6.6.6 gw 10.1.1.1
+sudo route add 10.7.7.7 gw 10.1.1.1
+sudo route add 10.8.8.8 gw 10.1.1.1
+sudo route add 10.9.9.9 gw 10.1.1.1
+sudo route add 10.10.10.10 gw 10.1.1.1
+sudo route add 2001:db8:a:a::1 gw 10.1.1.1
+sudo route add 2001:db8:b:b::1 gw 10.1.1.1
+route -A inet6 add 2001:db8:b:b::0/64 dev tap0
+route -A inet6 add 2001:db8:b:b::0/64 dev tap0
+sudo ssh-keygen -R 10.4.4.4
+sudo ssh-keygen -R 10.5.5.5
+sudo ssh-keygen -R 10.6.6.6
+sudo ssh-keygen -R 10.7.7.7
+sudo ssh-keygen -R 10.8.8.8
+sudo ssh-keygen -R 10.9.9.9
+sudo ssh-keygen -R 10.10.10.10
+sudo ssh-keygen -R 2001:db8:b:b::1
+sudo ssh-keygen -R 2001:db8:a:a::1
+ssh-keygen -f "/home/$USER/.ssh/known_hosts" -R 10.5.5.5
+ssh-keygen -f "/home/$USER/.ssh/known_hosts" -R 10.6.6.6
+ssh-keygen -f "/home/$USER/.ssh/known_hosts" -R 10.7.7.7
+ssh-keygen -f "/home/$USER/.ssh/known_hosts" -R 10.4.4.4
+ssh-keygen -f "/home/$USER/.ssh/known_hosts" -R 10.8.8.8
+ssh-keygen -f "/home/$USER/.ssh/known_hosts" -R 10.9.9.9
+ssh-keygen -f "/home/$USER/.ssh/known_hosts" -R 10.10.10.10
+ssh-keygen -f "/home/$USER/.ssh/known_hosts" -R 2001:db8:a:a::1
+ssh-keygen -f "/home/$USER/.ssh/known_hosts" -R 2001:db8:b:b::1
+
+
+
+# copy the below on every Router to create an ssh username and password
+
+config terminal
+username cisco priv 15 sec cisco
+ip domain-name example.com
+!!!configure the rsa to be 1024
+cryp key gen rsa
+1024
+line vty 0 4
+login local

@@ -1,0 +1,44 @@
+Feb 20 19:57:57.841 HYPERVISOR: Release 0.2.15-amd64/Linux (tag 2015060118)
+Feb 20 19:57:57.841 HYPERVISOR: Started on IP = 127.0.0.1, TCP port = 43766.
+Feb 20 19:57:57.856 HYPERVISOR: exec_cmd: hypervisor version 
+Feb 20 19:57:57.858 HYPERVISOR: exec_cmd: hypervisor working_dir /opt/GNS3/Project/AlinkyourPC/project-files/dynamips 
+Feb 20 19:57:57.858 GENERAL: working_dir=/opt/GNS3/Project/AlinkyourPC/project-files/dynamips
+Feb 20 19:57:57.859 HYPERVISOR: exec_cmd: vm create R7 2 c3600 
+Feb 20 19:57:57.859 VM: VM R7 created.
+Feb 20 19:57:57.861 HYPERVISOR: exec_cmd: vm set_con_tcp_port R7 2001 
+Feb 20 19:57:57.862 HYPERVISOR: exec_cmd: c3600 get_mac_addr R7 
+Feb 20 19:57:57.863 HYPERVISOR: exec_cmd: vm get_status R7 
+Feb 20 19:57:57.865 HYPERVISOR: exec_cmd: vm set_idle_pc R7 0x605050e4 
+Feb 20 19:57:57.868 HYPERVISOR: exec_cmd: vm set_ram R7 192 
+Feb 20 19:57:57.872 HYPERVISOR: exec_cmd: vm set_ios R7 /root/GNS3/images/IOS/c3640-jk9o3s-mz.124-16a.image 
+Feb 20 19:57:57.875 HYPERVISOR: exec_cmd: c3600 set_mac_addr R7 cc02.1629.0000 
+Feb 20 19:57:57.877 HYPERVISOR: exec_cmd: vm get_status R7 
+Feb 20 19:57:57.880 HYPERVISOR: exec_cmd: vm slot_add_binding R7 2 0 NM-1FE-TX 
+Feb 20 19:57:57.881 HYPERVISOR: exec_cmd: vm set_nvram R7 256 
+Feb 20 19:57:57.883 HYPERVISOR: exec_cmd: vm get_status R7 
+Feb 20 19:57:57.884 HYPERVISOR: exec_cmd: vm slot_add_binding R7 0 0 NM-1FE-TX 
+Feb 20 19:57:57.885 HYPERVISOR: exec_cmd: vm get_status R7 
+Feb 20 19:57:57.887 HYPERVISOR: exec_cmd: vm slot_add_binding R7 1 0 NM-1FE-TX 
+Feb 20 19:57:57.922 HYPERVISOR: exec_cmd: vm set_config R7 configs/i2_startup-config.cfg 
+Feb 20 19:57:58.083 HYPERVISOR: exec_cmd: nio create_udp udp-f80b5ffc-49cf-4c8e-8910-8ab9f9aa8b45 10000 127.0.0.1 10002 
+Feb 20 19:57:58.088 HYPERVISOR: exec_cmd: vm slot_add_nio_binding R7 1 0 udp-f80b5ffc-49cf-4c8e-8910-8ab9f9aa8b45 
+Feb 20 19:57:58.096 HYPERVISOR: exec_cmd: vm get_status R7 
+Feb 20 19:57:58.149 HYPERVISOR: exec_cmd: nio create_udp udp-d96b8a86-b40e-4212-b4dd-b2a91681d7ab 10007 127.0.0.1 10006 
+Feb 20 19:57:58.155 HYPERVISOR: exec_cmd: vm slot_add_nio_binding R7 2 0 udp-d96b8a86-b40e-4212-b4dd-b2a91681d7ab 
+Feb 20 19:57:58.162 HYPERVISOR: exec_cmd: vm get_status R7 
+Feb 20 19:58:13.280 HYPERVISOR: exec_cmd: vm extract_config R7 
+Feb 20 19:58:17.613 HYPERVISOR: exec_cmd: vm set_ghost_status R7 2 
+Feb 20 19:58:17.615 HYPERVISOR: exec_cmd: vm set_ghost_file R7 c3640-jk9o3s-mz.124-16a.image-192.ghost 
+Feb 20 19:58:17.615 HYPERVISOR: exec_cmd: vm get_status R7 
+Feb 20 19:58:17.617 HYPERVISOR: exec_cmd: vm start R7 
+Feb 20 23:11:30.871 HYPERVISOR: exec_cmd: vm get_status R7 
+Feb 20 23:11:30.872 HYPERVISOR: exec_cmd: vm stop R7 
+Feb 20 23:11:30.973 VM: VM R7 shutdown.
+Feb 20 23:11:30.989 HYPERVISOR: exec_cmd: vm extract_config R7 
+Feb 20 23:11:31.586 HYPERVISOR: exec_cmd: vm get_status R7 
+Feb 20 23:11:31.589 HYPERVISOR: exec_cmd: vm extract_config R7 
+Feb 20 23:11:31.592 HYPERVISOR: exec_cmd: vm delete R7 
+Feb 20 23:11:31.592 VM: VM R7 destroyed.
+Feb 20 23:11:31.595 HYPERVISOR: exec_cmd: hypervisor stop 
+Feb 20 23:11:31.969 HYPERVISOR: Stopped.
+Feb 20 23:11:31.969 GENERAL: reset done.
