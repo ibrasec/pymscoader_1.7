@@ -78,20 +78,33 @@ user@user:~$python pymscoader
 The script will ask you to enter the username, the password and the enable password (if avilable - you could just type Enter if there is no enable passsowrd), then it will read the ip_list.txt file loading all available ip addresses ( which can be written as a subnet ex: 10.0.0.0/24 or just as an ip address 10.0.0.1) and read all the show commands found on "show_cmds.txt" file, then it will ssh into all of the targeted devices (ip addresses) and excute the commands one by one, there is a certain time delay between every two commands in order not to overload the CPU with requests, the result will be stored on a directory called offlinecopies, if you go into this directory you will find as much files as the number of successfully logged-in devices, here is a tree view of what you would see if the program managed to access these ip addresses (10.1.1.1, 192.168.1.2, 172.16.5.5)
 
 offlinecopies
+
 |
+
 -- 10.1.1.1
+
 | |
+
 | |__offlinecopy-10.1.1.1-2016-12-1-12-00-00.log
+
 | |__offlinecopy-10.1.1.1-2016-12-1-13-00-00.log
+
 |
+
 -- 172.16.5.5
+
 | |
+
 | |__offlinecopy-172.16.5.5-2016-12-1-12-00-00.log
 
 | |__offlinecopy-172.16.5.5-2016-12-1-13-00-00.log
+
 |
+
 -- 192.168.1.2
+
   |
+  
   |__offlinecopy-192.168.1.2-2016-12-1-12-00-00.log
   
   |__offlinecopy-192.168.1.2-2016-12-1-13-00-00.log
