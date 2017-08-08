@@ -1,0 +1,3 @@
+/routing ospf print
+/routing ospf nei pr
+/routing ospf int print

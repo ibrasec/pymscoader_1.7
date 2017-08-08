@@ -1,0 +1,9 @@
+ls -la
+cat /var/log/syslog
+netstat -a
+route
+sudo su
+viki
+echo "hello"
+ifconfig
+route

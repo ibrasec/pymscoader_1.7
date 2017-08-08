@@ -1,0 +1,5 @@
+display interface ip brief
+display version
+display users
+display current
+display vlan 
