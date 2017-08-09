@@ -75,7 +75,7 @@ To run the default script "cisco_show.sh" simply type:
 
 user@user:~$python pymscoader
 
-The script will ask you to enter the username, the password and the enable password (if avilable - you could just type Enter if there is no enable passsowrd), then it will read the ip_list.txt file loading all available ip addresses ( which can be written as a subnet ex: 10.0.0.0/24 or just as an ip address 10.0.0.1) and read all the show commands found on "show_cmds.txt" file, then it will ssh into all of the targeted devices (ip addresses) and excute the commands one by one, there is a certain time delay between every two commands in order not to overload the CPU with requests, the result will be stored on a directory called offlinecopies, if you go into this directory you will find as much files as the number of successfully logged-in devices, here is a tree view of what you would see if the program managed to access these ip addresses (10.1.1.1, 192.168.1.2, 172.16.5.5)
+The script will ask you to enter the username, the password and the enable password (if avilable - you could just type Enter if there is no enable passsowrd), then it will read the ip_list.txt file loading all available ip addresses ( which can be written as a subnet ex: 10.0.0.0/24 or just as an ip address 10.0.0.1) and read all the commands found on "commands.txt" file, then it will ssh into all of the targeted devices (ip addresses) and excute the commands one by one, there is a certain time delay between every two commands in order not to overload the CPU with requests, the result will be stored on a directory called offlinecopies, if you go into this directory you will find as much files as the number of successfully logged-in devices, here is a tree view of what you would see if the program managed to access these ip addresses (10.1.1.1, 192.168.1.2, 172.16.5.5)
 
 offlinecopies
 
@@ -85,9 +85,9 @@ offlinecopies
 
 | |
 
-| |__offlinecopy-10.1.1.1-2016-12-1-12-00-00.log
+| |__cisco-10.1.1.1-2016-12-1-12-00-00.log
 
-| |__offlinecopy-10.1.1.1-2016-12-1-13-00-00.log
+| |__cisco-10.1.1.1-2016-12-1-13-00-00.log
 
 |
 
@@ -95,9 +95,9 @@ offlinecopies
 
 | |
 
-| |__offlinecopy-172.16.5.5-2016-12-1-12-00-00.log
+| |__cisco-172.16.5.5-2016-12-1-12-00-00.log
 
-| |__offlinecopy-172.16.5.5-2016-12-1-13-00-00.log
+| |__cisco-172.16.5.5-2016-12-1-13-00-00.log
 
 |
 
@@ -105,13 +105,13 @@ offlinecopies
 
 |
 
-|__offlinecopy-192.168.1.2-2016-12-1-12-00-00.log
+|__cisco-192.168.1.2-2016-12-1-12-00-00.log
   
-|__offlinecopy-192.168.1.2-2016-12-1-13-00-00.log
+|__cisco-192.168.1.2-2016-12-1-13-00-00.log
 
 You could notice the time of the log at the last of the file name (12-00-00 means 12:00:00).
 If the program couldn't access the devices for reachability issue or for user credential issue, you will not find any file created, instead you will find the ip addresses logged into the failed.log file.
-if the shell script has been modified for any reason, the next time you run the program you will be asked whether you will need to proceed runnign the program or not, this is just for security reason and that you are really aware of any changes. If you don't want to be questioned every time you do changes to the shell script you could simply type:
+If the shell script has been modified for any reason, the next time you run the program you will be asked whether you will need to proceed running the program or not, this is just for security reason and that you are really aware of any changes. If you don't want to be questioned every time you do changes to the shell script you could simply type:
 
 user@user:~$python pymscoader -i
 
@@ -150,7 +150,7 @@ user@user:~$python pymscoader --hour 5
 How To Create another Vendor shell script
 ========================================
 
-You just create another directory - within this program direcoty - with a vendor name.
+You just create another directory - under vendor direcoty - with the correspnding vendor name.
 
 example:
 
@@ -160,12 +160,7 @@ if the vendor is Avaya create a directory called avaya
 
 This directory should include the shell script and the commands to be loaded by this scipt.
 
-as example: To run huawei display commands using the shell script "huawei_display.sh" through pymscoader simply type:
 
-user@user:~$python pymscoader -v hauwei -s huawei_display.sh
-
-
-changing the ip addresses in the ip_list.txt file will not take affect if schedualling has been activated until you deactivate then activate the pymscoader again, technically it is possible to do this, and i had two options, either to add a global variable under the launch function which i don't like to do (staying a way from Global varibale), or make the schedualling under the main loop which forms a design issue in my prospective.
 
 Scheduling
 ----------
@@ -191,9 +186,12 @@ if the script to be run weekly and at a certain day
 or
 --day-of-week 0
 
+Note:
+Changing the ip addresses in the ip_list.txt file while pymscoader is running will not take affect until you deactivate then activate pymscoader again, technically it is possible to have this feature, and i had two options, either to add a global variable under the launch function which i don't like to do (staying a way from Global varibale), or make the schedualling under the main loop which forms a design issue in my prospective.
 
 
 Still under Develpoment
+
 =======================
 Support other host machines other than linux.
 
